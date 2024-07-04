@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabka Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header><h1>Datapack Template Generator</h1></header>
+        <div>
+            <label for="datapack_name">Datapack name</label>
+            <input type="text" id="datapack_name"><br>
+
+            <label for="pack_format">Pack format</label>
+            <input type="text" id="pack_format"><br>
+
+            <label for="description">Description</label>
+            <input type="text" id="description"><br>
+
+            <label for="datapack_folder">Namespace</label>
+            <input type="text" id="datapack_folder"><br>
+        </div>
+        <button onclick="createDatapack()">Generate</button>
+    </div>
+</body>
+
+</html>

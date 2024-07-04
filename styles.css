@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'seven';
+    src: URL('fonts/seven.ttf') format('truetype');
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'seven';
+    font-size: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    font-family: 'seven';
+    font-size: 20px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    font-family: 'seven';
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    font-family: 'seven';
+    font-size: 20px;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+button {
+    font-family: 'seven';
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #288945;
+}
