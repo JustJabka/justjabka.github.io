@@ -13,23 +13,46 @@
 </head>
 
 <body>
+    <header>
+        <h1>Jabka Generator</h1>
+    </header>
     <div class="container">
-        <header><h1>Datapack Template Generator</h1></header>
+        <h1>Datapack Template Generator</h1>
         <div>
             <label for="datapack_name">Datapack name</label>
             <input type="text" id="datapack_name"><br>
 
-            <label for="pack_format">Pack format</label>
-            <input type="text" id="pack_format"><br>
+            <label for="pack_format_dp">Pack format</label>
+            <input type="text" id="pack_format_dp"><br>
 
-            <label for="description">Description</label>
-            <input type="text" id="description"><br>
+            <label for="description_dp">Description</label>
+            <input type="text" id="description_dp"><br>
 
             <label for="datapack_folder">Namespace</label>
             <input type="text" id="datapack_folder"><br>
         </div>
-        <button onclick="createDatapack()">Generate</button>
-    </div>
+        <button id="generate_dp" onclick="createDatapack()">Generate</button>
+        <div id="message_dp" class="message"></div>
+    </div><br>
+
+    <div class="container">
+        <h1>Resourcepack Template Generator</h1>
+        <div>
+            <label for="resourcepack_name">Resourcepack name</label>
+            <input type="text" id="resourcepack_name"><br>
+
+            <label for="pack_format_rp">Pack format</label>
+            <input type="text" id="pack_format_rp"><br>
+
+            <label for="description_rp">Description</label>
+            <input type="text" id="description_rp"><br>
+
+            <label for="resourcepack_folder">Namespace</label>
+            <input type="text" id="resourcepack_folder"><br>
+        </div>
+        <button id="generate_rp" onclick="createResourcepack()">Generate</button>
+        <div id="message_rp" class="message"></div>
+    </div><br>
 </body>
 
 </html>
