@@ -17,21 +17,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    background-color: #1e1e1e;
+    width: 100%;
 }
 
 .container {
-    font-family: 'seven';
-    font-size: 20px;
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 650px;
+    display: block;
 }
 
 label {
-    font-family: 'seven';
-    font-size: 20px;
     display: block;
     margin-top: 10px;
 }
@@ -63,4 +70,19 @@ button {
 
 button:hover {
     background-color: #288945;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    text-align: center
+}
+
+.success {
+    background-color: #288945;
+}
+
+.error {
+    background-color: #F42F36;
 }
