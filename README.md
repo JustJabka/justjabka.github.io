@@ -1,2 +1,2 @@
 # jabka-generator.github.io
-Datapack template generator
+Datapack Generators and Tools for Minecraft 1.21
