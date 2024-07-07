@@ -18,52 +18,89 @@
         <img src="images/favicon.png" alt="icon">
         <h1>Jabka Generator</h1>
     </header>
+    <!-- DATAPACK -->
     <div class="container">
         <h1><img src="images/icons/datapack.svg" alt="icon" class="icon"> Datapack Template Generator</h1>
         <div>
+            <!-- data -->
             <div>
-                <label><img src="images/icons/data.svg" alt="icon" class="icon16"> Datapack name</label>
-                <input type="text" id="datapack_name"><br>
+                <label><img src="images/icons/data.svg" alt="icon" class="icon16"> Datapack name
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Name of the folder where the datapack will be located.</span>
+                    </span>
+                </label>
+                <input type="text" id="datapack_name" placeholder="My New Datapack"><br>
             </div>
-
+            <!-- pack_format -->
             <div>
-                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format</label>
-                <input type="text" id="pack_format_dp"><br>
+                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Pack format is a number that indicates which version of the game the datapack is compatible with.</span>
+                    </span>
+                </label>
+                <input type="text" id="pack_format_dp" placeholder="48"><br>
             </div>
-
+            <!-- descripton -->
             <div>
-                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description</label>
-                <input type="text" id="description_dp"><br>
+                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Short description of the datapack<br/>(Optional).</span>
+                    </span>
+                </label>
+                <input type="text" id="description_dp" placeholder="Description of my new datapack."><br>
             </div>
-
+            <!-- namespace -->
             <div>
-                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace</label>
-                <input type="text" id="datapack_folder"><br>
+                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Namespace is a folder that stores all the contents of the datapack, such as functions, advancements, predicates, etc.</span>
+                    </span>
+                </label>
+                <input type="text" id="datapack_folder" placeholder="my_new_datapack"><br>
             </div>
         </div>
         <button id="generate_dp" onclick="createDatapack()">Generate</button>
         <div id="message_dp" class="message"></div>
     </div><br>
-
+    <!-- RESOURCEPACK -->
     <div class="container">
         <h1><img src="images/icons/resourcepack.svg" alt="icon" class="icon"> Resourcepack Template Generator</h1>
         <div>
+            <!-- assets -->
             <div>
-                <label><img src="images/icons/assets.svg" alt="icon" class="icon16"> Resourcepack name</label>
-                <input type="text" id="resourcepack_name"><br>
+                <label><img src="images/icons/assets.svg" alt="icon" class="icon16"> Resourcepack name
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Name of the folder where the resourcepack will be located.</span>
+                    </span>
+                </label>
+                <input type="text" id="resourcepack_name" placeholder="My New Resourcepack"><br>
             </div>
-
+            <!-- pack_format -->
             <div>
-                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format</label>
-                <input type="text" id="pack_format_rp"><br>
+                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Pack format is a number that indicates which version of the game the resourcepack is compatible with.</span>
+                    </span>
+                </label>
+                <input type="text" id="pack_format_rp" placeholder="34"><br>
             </div>
+            <!-- description -->
             <div>
-                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description</label>
-                <input type="text" id="description_rp"><br>
+                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Short description of the resourcepack.</span>
+                    </span>
+                </label>
+                <input type="text" id="description_rp" placeholder="Description of my new resourcepack."><br>
             </div>
+            <!-- namespace -->
             <div>
-                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace</label>
-                <input type="text" id="resourcepack_folder"><br>
+                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace
+                    <span class="tooltip">🛈
+                        <span class="tooltiptext">Namespace is a folder that stores all the contents of the resourcepack, such as models, textures, atlases, etc.</span>
+                    </span>
+                </label>
+                <input type="text" id="resourcepack_folder" placeholder="my_new_resourcepack"><br>
             </div>
         </div>
         <button id="generate_rp" onclick="createResourcepack()">Generate</button>
@@ -73,8 +110,9 @@
         <div class="footer-content">
             <h3>Credits</h3>
             <p>Developed by: <a href="https://github.com/JustJabka" target="_blank">JustJabka</a></p>
-            <p>Icons by: <a href="https://marketplace.visualstudio.com/publishers/SuperAnt" target="_blank">FuncFusioneam</a></p>
-            <p>Special thanks to: mr_menelaus, Antoha256M</p>
+            <p>Icons by: <a href="https://marketplace.visualstudio.com/publishers/SuperAnt"
+                    target="_blank">FuncFusioneam</a></p>
+            <p>Special thanks to: mr_menelaus, <a href="https://www.planetminecraft.com/member/antoha256m/">Antoha256M</a></p>
         </div>
     </footer>
 </body>
