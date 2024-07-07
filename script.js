@@ -1,3 +1,67 @@
+// validate pack_format
+function validatePackFormat(packFormat) {
+  if (packFormat.includes(',')) {
+    const formats = packFormat.split(',').map(format => format.trim());
+    for (const format of formats) {
+      if (isNaN(format) || format === '') {
+        return 'Error: Invalid format. Ensure all values are numbers and separated by commas.';
+      }
+    }
+  } else if (packFormat.includes('-')) {
+    const [minFormat, maxFormat] = packFormat.split('-').map(format => format.trim());
+    if (isNaN(minFormat) || isNaN(maxFormat) || minFormat === '' || maxFormat === '') {
+      return 'Error: Invalid format. Ensure both values are numbers and separated by a hyphen.';
+    }
+    if (parseInt(minFormat) > parseInt(maxFormat)) {
+      return 'Error: Invalid range. The first number should be less than or equal to the second number.';
+    }
+  } else {
+    if (isNaN(packFormat) || packFormat === '') {
+      return 'Error: Invalid format. Ensure the value is a number.';
+    }
+  }
+  return '';
+}
+
+// generate pack.mcmeta
+function generatePackMcmeta(packFormat, description) {
+  let packMcmeta = '';
+
+  if (packFormat.includes(',')) {
+    const formats = packFormat.split(',').map(format => format.trim());
+    packMcmeta = `{
+  "pack": {
+    "pack_format": ${formats[0]},
+    "supported_formats": [
+      ${formats.join(', ')}
+    ],
+    "description": "${description}"
+  }
+}`;
+  } else if (packFormat.includes('-')) {
+    const [minFormat, maxFormat] = packFormat.split('-').map(format => format.trim());
+    packMcmeta = `{
+  "pack": {
+    "pack_format": ${minFormat},
+    "supported_formats": {
+        "min_inclusive": ${minFormat},
+        "max_inclusive": ${maxFormat}
+    },
+    "description": "${description}"
+  }
+}`;
+  } else {
+    packMcmeta = `{
+  "pack": {
+    "pack_format": ${packFormat},
+    "description": "${description}"
+  }
+}`;
+  }
+
+  return packMcmeta;
+}
+
 // Datapack
 function createDatapack() {
   const datapackName = document.getElementById('datapack_name').value;
@@ -10,16 +74,17 @@ function createDatapack() {
     return;
   }
 
+  const validationMessage = validatePackFormat(packFormat);
+  if (validationMessage) {
+    showMessage(validationMessage, 'error', 'message_dp', 'generate_dp');
+    return;
+  }
+
   if (!description) {
     description = "";
   }
 
-  const packMcmeta = `{
-  "pack": {
-      "pack_format": ${packFormat},
-      "description": "${description}"
-  }
-}`;
+  const packMcmeta = generatePackMcmeta(packFormat, description);
 
   const loadJson = `{
   "values": [
@@ -65,16 +130,17 @@ function createResourcepack() {
     return;
   }
 
+  const validationMessage = validatePackFormat(packFormat);
+  if (validationMessage) {
+    showMessage(validationMessage, 'error', 'message_rp', 'generate_rp');
+    return;
+  }
+
   if (!description) {
     description = "";
   }
 
-  const packMcmeta = `{
-  "pack": {
-      "pack_format": ${packFormat},
-      "description": "${description}"
-  }
-}`;
+  const packMcmeta = generatePackMcmeta(packFormat, description);
 
   const zip = new JSZip();
   zip.file("pack.mcmeta", packMcmeta);
@@ -113,3 +179,30 @@ function showMessage(message, type, elementId, buttonId) {
     button.style.display = 'block';
   }, 750);
 }
+
+const pack_formats_dp = [
+  "48",
+  "45-48",
+  "25,35,48"
+];
+
+const pack_formats_rp = [
+  "34",
+  "25-34",
+  "15,22,34"
+];
+
+let index = 0;
+
+function changePlaceholder() {
+  const input = document.getElementById('pack_format_dp');
+  input.placeholder = pack_formats_dp[index];
+  index = (index + 1) % pack_formats_dp.length;
+
+  const input2 = document.getElementById('pack_format_rp');
+  input2.placeholder = pack_formats_rp[index];
+  index = (index + 1) % pack_formats_rp.length;
+
+}
+
+setInterval(changePlaceholder, 1250);
