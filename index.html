@@ -19,42 +19,64 @@
         <h1>Jabka Generator</h1>
     </header>
     <div class="container">
-        <h1>Datapack Template Generator</h1>
+        <h1><img src="images/icons/datapack.svg" alt="icon" class="icon"> Datapack Template Generator</h1>
         <div>
-            <label for="datapack_name">Datapack name</label>
-            <input type="text" id="datapack_name"><br>
+            <div>
+                <label><img src="images/icons/data.svg" alt="icon" class="icon16"> Datapack name</label>
+                <input type="text" id="datapack_name"><br>
+            </div>
 
-            <label for="pack_format_dp">Pack format</label>
-            <input type="text" id="pack_format_dp"><br>
+            <div>
+                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format</label>
+                <input type="text" id="pack_format_dp"><br>
+            </div>
 
-            <label for="description_dp">Description</label>
-            <input type="text" id="description_dp"><br>
+            <div>
+                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description</label>
+                <input type="text" id="description_dp"><br>
+            </div>
 
-            <label for="datapack_folder">Namespace</label>
-            <input type="text" id="datapack_folder"><br>
+            <div>
+                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace</label>
+                <input type="text" id="datapack_folder"><br>
+            </div>
         </div>
         <button id="generate_dp" onclick="createDatapack()">Generate</button>
         <div id="message_dp" class="message"></div>
     </div><br>
 
     <div class="container">
-        <h1>Resourcepack Template Generator</h1>
+        <h1><img src="images/icons/resourcepack.svg" alt="icon" class="icon"> Resourcepack Template Generator</h1>
         <div>
-            <label for="resourcepack_name">Resourcepack name</label>
-            <input type="text" id="resourcepack_name"><br>
+            <div>
+                <label><img src="images/icons/assets.svg" alt="icon" class="icon16"> Resourcepack name</label>
+                <input type="text" id="resourcepack_name"><br>
+            </div>
 
-            <label for="pack_format_rp">Pack format</label>
-            <input type="text" id="pack_format_rp"><br>
-
-            <label for="description_rp">Description</label>
-            <input type="text" id="description_rp"><br>
-
-            <label for="resourcepack_folder">Namespace</label>
-            <input type="text" id="resourcepack_folder"><br>
+            <div>
+                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon16"> Pack format</label>
+                <input type="text" id="pack_format_rp"><br>
+            </div>
+            <div>
+                <label><img src="images/icons/description.svg" alt="icon" class="icon16"> Description</label>
+                <input type="text" id="description_rp"><br>
+            </div>
+            <div>
+                <label><img src="images/icons/namespace.svg" alt="icon" class="icon16"> Namespace</label>
+                <input type="text" id="resourcepack_folder"><br>
+            </div>
         </div>
         <button id="generate_rp" onclick="createResourcepack()">Generate</button>
         <div id="message_rp" class="message"></div>
     </div><br>
+    <footer>
+        <div class="footer-content">
+            <h3>Credits</h3>
+            <p>Developed by: <a href="https://github.com/JustJabka" target="_blank">JustJabka</a></p>
+            <p>Icons by: <a href="https://marketplace.visualstudio.com/publishers/SuperAnt" target="_blank">FuncFusioneam</a></p>
+            <p>Special thanks to: mr_menelaus, Antoha256M</p>
+        </div>
+    </footer>
 </body>
 
 </html>
