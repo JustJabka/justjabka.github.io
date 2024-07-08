@@ -114,12 +114,12 @@ button:hover {
 
 .icon {
     width: 64px;
-    height: 64px;
+    height: auto;
 }
 
-.icon16 {
+.icon32 {
     width: 32px;
-    height: 32px;
+    height: auto;
 }
 
 footer {
@@ -173,4 +173,10 @@ footer p {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+@media (max-width: 1080px){
+    .tooltip .tooltiptext {
+        width: 200px;
+    }
 }
