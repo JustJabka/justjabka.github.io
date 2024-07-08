@@ -1,2 +1,2 @@
 # justjabka.github.io
-Datapack Generators and Tools for Minecraft 1.21
+Generators and Tools for Minecraft 1.21
