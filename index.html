@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jabka Generator</title>
-    <link rel="icon" href="images/favicon.png" sizes="32x32">
+    <link rel="icon" href="src/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -12,29 +12,33 @@
 </head>
 
 <body>
+    <audio id="easter-egg" src="src/easter-egg.ogg" preload="auto"></audio>
     <header>
-        <img src="images/favicon.png" alt="icon">
+        <a onclick="document.getElementById('easter-egg').play();" style="cursor:pointer;">
+            <img src="src/favicon.png" alt="icon">
+        </a>
         <h1>Jabka Generator</h1>
+        <a href="https://github.com/JustJabka/justjabka.github.io" target="_blank" style="margin-left:auto;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="32" height="32"><path fill="white" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
     </header>
     
     <!-- Datapack -->
     <div class="container">
-        <h1><img src="images/icons/datapack.svg" alt="icon" class="icon"> Datapack Template Generator</h1>
+        <h1><img src="src/icons/datapack.svg" alt="icon" class="icon"> Datapack Template Generator</h1>
         <div>
             <div>
-                <label><img src="images/icons/data.svg" alt="icon" class="icon32"> Datapack name</label>
+                <label><img src="src/icons/data.svg" alt="icon" class="icon32"> Datapack name</label>
                 <input type="text" id="datapack_name" placeholder="My New Datapack"><br>
             </div>
             <div>
-                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon32"> Pack format</label>
+                <label><img src="src/icons/pack_mcmeta.svg" alt="icon" class="icon32"> Pack format</label>
                 <input type="text" id="pack_format_dp" placeholder="48"><br>
             </div>
             <div>
-                <label><img src="images/icons/description.svg" alt="icon" class="icon32"> Description</label>
+                <label><img src="src/icons/description.svg" alt="icon" class="icon32"> Description</label>
                 <input type="text" id="description_dp" placeholder="Description of my new datapack."><br>
             </div>
             <div>
-                <label><img src="images/icons/namespace.svg" alt="icon" class="icon32"> Namespace</label>
+                <label><img src="src/icons/namespace.svg" alt="icon" class="icon32"> Namespace</label>
                 <input type="text" id="datapack_folder" placeholder="my_new_datapack"><br>
             </div>
         </div>
@@ -44,22 +48,22 @@
     
     <!-- Resourcepack -->
     <div class="container">
-        <h1><img src="images/icons/resourcepack.svg" alt="icon" class="icon"> Resourcepack Template Generator</h1>
+        <h1><img src="src/icons/resourcepack.svg" alt="icon" class="icon"> Resourcepack Template Generator</h1>
         <div>
             <div>
-                <label><img src="images/icons/assets.svg" alt="icon" class="icon32"> Resourcepack name</label>
+                <label><img src="src/icons/assets.svg" alt="icon" class="icon32"> Resourcepack name</label>
                 <input type="text" id="resourcepack_name" placeholder="My New Resourcepack"><br>
             </div>
             <div>
-                <label><img src="images/icons/pack_mcmeta.svg" alt="icon" class="icon32"> Pack format</label>
+                <label><img src="src/icons/pack_mcmeta.svg" alt="icon" class="icon32"> Pack format</label>
                 <input type="text" id="pack_format_rp" placeholder="34"><br>
             </div>
             <div>
-                <label><img src="images/icons/description.svg" alt="icon" class="icon32"> Description</label>
+                <label><img src="src/icons/description.svg" alt="icon" class="icon32"> Description</label>
                 <input type="text" id="description_rp" placeholder="Description of my new resourcepack."><br>
             </div>
             <div>
-                <label><img src="images/icons/namespace.svg" alt="icon" class="icon32"> Namespace</label>
+                <label><img src="src/icons/namespace.svg" alt="icon" class="icon32"> Namespace</label>
                 <input type="text" id="resourcepack_folder" placeholder="my_new_resourcepack"><br>
             </div>
         </div>

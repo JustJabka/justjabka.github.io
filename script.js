@@ -62,8 +62,16 @@ function generateTemplate(type) {
 
     const tagsFolderName = format < 45 ? "functions" : "function";
     const mcFolder = zip.folder(`data/minecraft/tags/${tagsFolderName}`);
-    mcFolder.file("load.json", `{"values": ["${folder}:load"]}`);
-    mcFolder.file("tick.json", `{"values": ["${folder}:tick"]}`);
+    mcFolder.file("load.json", `{
+  "values": [
+    "${folder}:load"
+  ]
+}`);
+    mcFolder.file("tick.json", `{
+  "values": [
+    "${folder}:tick"
+  ]
+}`);
   } else {
     contentFolder.folder("models/item");
     contentFolder.folder("textures/item");
