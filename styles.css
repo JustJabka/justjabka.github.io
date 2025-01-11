@@ -112,7 +112,7 @@ button:hover {
     background-color: #F42F36;
 }
 
-.icon {
+.icon64 {
     width: 64px;
     height: auto;
 }
@@ -144,35 +144,6 @@ footer h3 {
 footer p {
     font-size: 18px;
     margin: 5px 0;
-}
-
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 300px;
-    background-color: #121212;
-    color: #e0e0e0;
-    text-align: center;
-    border-radius: 6px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }
 
 @media (max-width: 1080px){

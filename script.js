@@ -100,8 +100,15 @@ function showMessage(message, type, elementId, buttonId) {
   }, 750);
 }
 
-const placeholders_dp = ["48","45-48","25,35,48"];
-const placeholders_rp = ["34","25-34","15,22,34"];
+let placeholders_dp = ["Loading..."];
+let placeholders_rp = ["Loading..."];
+
+fetch("https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json").then(res => res.json()).then(data => {
+  const { data_pack_version: last_release_dp, resource_pack_version: last_release_rp } = data.find(el => el.type === "release")
+  const { data_pack_version: last_snapshot_dp, resource_pack_version: last_snapshot_rp } = data.find(el => el.type === "snapshot")
+  placeholders_dp = [`${last_release_dp}`, `${last_release_dp - 1}-${last_release_dp}`, `${last_snapshot_dp - 2},${last_snapshot_dp - 1},${last_snapshot_dp}`]
+  placeholders_rp = [`${last_release_rp}`, `${last_release_rp - 1}-${last_release_rp}`, `${last_snapshot_rp - 2},${last_snapshot_rp - 1},${last_snapshot_rp}`]
+})
 
 let index = 0;
 
