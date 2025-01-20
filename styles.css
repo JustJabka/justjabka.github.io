@@ -3,6 +3,12 @@
     src: URL('src/seven.ttf') format('truetype');
 }
 
+@media (max-width: 1080px){
+    .tooltip .tooltiptext {
+        width: 200px;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -144,10 +150,4 @@ footer h3 {
 footer p {
     font-size: 18px;
     margin: 5px 0;
-}
-
-@media (max-width: 1080px){
-    .tooltip .tooltiptext {
-        width: 200px;
-    }
 }
