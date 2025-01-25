@@ -99,10 +99,12 @@ function generateTemplate(type) {
       })
       .catch(() => showMessage('Error generating template', 'error', `message${type}`, `generate${type}`));
   } else if (type === 'RC') {
-    const rayLength = document.getElementById('rayLength')?.value || '';
-    const rayStep = document.getElementById('rayStep')?.value || '';
+    const rayLength = parseFloat(document.getElementById('rayLength')?.value || '');
+    const rayStep = parseFloat(document.getElementById('rayStep')?.value || '');
     const blockTarget = document.getElementById('blockTarget')?.value || '';
     const entityTarget = document.getElementById('entityTarget')?.value || '';
+    const visible = document.getElementById('visible').checked;
+    const inline = document.getElementById('inline').checked;
 
     // If not all fields are filled in
     if (!rayLength || !rayStep || (!blockTarget && !entityTarget)) {
@@ -114,10 +116,14 @@ function generateTemplate(type) {
     const zip = new JSZip();
     const functionsFolder = zip.folder('function');
     const loopCode = [
-      `scoreboard players remove #distance main_score 1`,
-      `particle minecraft:flame`
+      `scoreboard players remove #distance main_score 1`
     ];
 
+    if (visible) {
+      loopCode.push(`particle minecraft:flame ~ ~ ~`);
+    }
+
+    // Block Target and Entity Target generation
     if (blockTarget && entityTarget) {
       loopCode.push(
         `# Check if the raycast has hit an entity's hitbox and block`,
@@ -143,11 +149,22 @@ function generateTemplate(type) {
     functionsFolder.file('load.mcfunction', `scoreboard objectives add main_score dummy`);
     functionsFolder.file('start.mcfunction', [
       `tag @s add raycaster`,
-      `scoreboard players set #distance main_score ${rayLength}`,
+      `scoreboard players set #distance main_score ${rayLength / rayStep}`,
       `execute at @s anchored eyes positioned ^ ^ ^${rayStep} run function <namespace>:loop`,
       `tag @s remove raycaster`
     ].join('\n'));
     functionsFolder.file('loop.mcfunction', loopCode.join('\n'));
+
+    if (inline && blockTarget) {
+      const preCode = [];
+      for (let i = rayStep; i <= rayLength + 0.001; i += rayStep) {
+        preCode.push(`unless block ^ ^ ^${i.toFixed(1)} ${blockTarget}`);
+      }
+      functionsFolder.file('pre.mcfunction', [
+        `execute anchored eyes positioned ^ ^ ^ ${preCode.join(' ')} run return fail`,
+        `return 1`
+      ].join('\n'));
+    }
 
     zip.generateAsync({ type: "blob" })
       .then(content => {
